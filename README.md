@@ -4,7 +4,7 @@
 This project predicts whether a water sample is safe or unsafe for drinking using various chemical and biological parameters. Multiple supervised machine learning models were trained and evaluated to automate water quality assessment.
 This work is part of an internship project aligned with modern AI-based environmental monitoring.
 
-📌 Overview
+📌 Overview:<br>
 Industrialization, urban development, and agricultural activities have contributed to large-scale freshwater contamination. Traditional lab-based water testing is slow and expensive.
 This project automates water safety classification using machine learning. The model uses various contaminants such as:
 
@@ -25,7 +25,7 @@ Uranium
 
 After experimentation, Random Forest achieved the best accuracy.
 
-📚 Dataset
+**📚Dataset:**<br>
 Source: Kaggle (Water Potability Dataset)
 Type: Chemical + biological contaminant features
 Target column:
@@ -36,32 +36,32 @@ Aluminium, Ammonia, Arsenic, Barium, Cadmium, Chromium, Copper, Fluoride, Lead, 
 Derived Feature
 trace_material = bacteria + viruses
 
-🛠️ Methodology
-**1.Data Preprocessing:**
-✔ Removed invalid values (#NUM!)
-✔ Converted object → numeric types
-✔ Balanced dataset using SMOTE
-✔ Scaled features using StandardScaler
-✔ Added new feature: trace_material
-✔ 80/20 stratified train–test split
+**🛠️Methodology:**<br>
+**1.Data Preprocessing:**<br>
+✔ Removed invalid values (#NUM!)<br>
+✔ Converted object → numeric types<br>
+✔ Balanced dataset using SMOTE<br>
+✔ Scaled features using StandardScaler<br>
+✔ Added new feature: trace_material<br>
+✔ 80/20 stratified train–test split<br>
 
-**2. Exploratory Data Analysis (EDA):**
+**2. Exploratory Data Analysis (EDA):**<br>
 Class distribution (count plot + pie chart)
 Correlation heatmap
 Contaminant distribution plots
 Identified class imbalance (unsafe: 88.56%, safe: 11.4%)
 
-**3.Models Implemented:**
+**3.Models Implemented:**<br>
 
-1.Logistic Regression
-2.K-Nearest Neighbors (KNN)
-3.Decision Tree
-4.Random Forest
-5.Support Vector Machine (SVM)
-6.XGBoost
-Hyperparameter tuning was applied to optimize each model.
+1.Logistic Regression<br>
+2.K-Nearest Neighbors (KNN)<br>
+3.Decision Tree<br>
+4.Random Forest<br>
+5.Support Vector Machine (SVM)<br>
+6.XGBoost<br>
+Hyperparameter tuning was applied to optimize each model.<br>
 
-**4.Model Evaluation:**
+**4.Model Evaluation:**<br>
 Metrics Used:
 
 Accuracy
@@ -73,17 +73,17 @@ ROC-AUC
 Confusion Matrix
 10-Fold Stratified Cross-Validation
 
-**🔥Best Performing Model:**
+**🔥Best Performing Model:**<br>
 Model	Accuracy
 Random Forest	95%
 XGBoost	92%
 Others	Lower
 
-**🧰 Tech Stack:**
+**🧰 Tech Stack:**<br>
 
 Python
 Pandas
-NumPy
+NumPy 
 Matplotlib / Seaborn / Plotly
 Scikit-learn
 XGBoost
