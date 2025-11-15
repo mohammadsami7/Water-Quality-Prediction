@@ -1,195 +1,91 @@
-# Water-Quality-Prediction
+# Water Quality Prediction using Machine Learning
 🌊 Water Quality Prediction Using Machine Learning
 
-This project focuses on predicting whether a given water sample is safe or unsafe for drinking based on several chemical and biological parameters. The system uses multiple supervised machine learning models and evaluates their performance using various metrics.
-
-The project is part of an internship work and aligns with modern approaches for automating environmental monitoring through AI.
+This project predicts whether a water sample is safe or unsafe for drinking using various chemical and biological parameters. Multiple supervised machine learning models were trained and evaluated to automate water quality assessment.
+This work is part of an internship project aligned with modern AI-based environmental monitoring.
 
 📌 Overview
-
-The increasing industrialization, urban expansion, and agricultural activities have led to contamination of global water sources. Traditional laboratory-based water quality testing is expensive and time-consuming.
-
-This project aims to automate water safety classification using machine learning.
-Several ML models were trained to predict water potability using contaminants like:
+Industrialization, urban development, and agricultural activities have contributed to large-scale freshwater contamination. Traditional lab-based water testing is slow and expensive.
+This project automates water safety classification using machine learning. The model uses various contaminants such as:
 
 Arsenic
-
 Ammonia
-
 Aluminium
-
 Barium
-
 Cadmium
-
 Chromium
-
 Copper
-
 Fluoride
-
 Lead
-
+Mercury
 Bacteria
-
 Viruses
-
 Uranium
-...and many others.
+…and many more.
 
-After experimentation, Random Forest produced the highest prediction accuracy.
+After experimentation, Random Forest achieved the best accuracy.
 
 📚 Dataset
-
-Source: Kaggle — Water Potability Dataset
-
-Samples: Chemical + Biological contaminants
-
-Target Feature:
-
+Source: Kaggle (Water Potability Dataset)
+Type: Chemical + biological contaminant features
+Target column:
 is_safe → 1 (Safe), 0 (Unsafe)
+Key Parameters Used:
+Aluminium, Ammonia, Arsenic, Barium, Cadmium, Chromium, Copper, Fluoride, Lead, Mercury, Nitrates, Bacteria, Viruses, Perchlorate, Radium, Selenium, Silver, Uranium.
 
-Key Parameters
-
-Aluminium
-
-Ammonia
-
-Arsenic
-
-Barium
-
-Cadmium
-
-Chromium
-
-Copper
-
-Fluoride
-
-Lead
-
-Mercury
-
-Nitrates
-
-Bacteria
-
-Viruses
-
-Perchlorate
-
-Radium
-
-Selenium
-
-Silver
-
-Uranium
-
-A derived feature:
-
+Derived Feature
 trace_material = bacteria + viruses
 
 🛠️ Methodology
-1. Data Preprocessing
+**1.Data Preprocessing:**
+✔ Removed invalid values (#NUM!)
+✔ Converted object → numeric types
+✔ Balanced dataset using SMOTE
+✔ Scaled features using StandardScaler
+✔ Added new feature: trace_material
+✔ 80/20 stratified train–test split
 
-✔ Replaced invalid values (#NUM!)
-✔ Converted object → numeric datatypes
-✔ Balanced data using SMOTE
-✔ Feature scaling using StandardScaler
-✔ Added new feature (trace_material)
-✔ Stratified train–test split (80/20)
-
-2. Exploratory Data Analysis
-
-Count plots and pie charts for class distribution
-
+**2. Exploratory Data Analysis (EDA):**
+Class distribution (count plot + pie chart)
 Correlation heatmap
-
-Distribution analysis of contaminants
-
+Contaminant distribution plots
 Identified class imbalance (unsafe: 88.56%, safe: 11.4%)
 
-3. Models Implemented
+**3.Models Implemented:**
 
-The following classification algorithms were trained:
+1.Logistic Regression
+2.K-Nearest Neighbors (KNN)
+3.Decision Tree
+4.Random Forest
+5.Support Vector Machine (SVM)
+6.XGBoost
+Hyperparameter tuning was applied to optimize each model.
 
-Logistic Regression
-
-K-Nearest Neighbors (KNN)
-
-Decision Tree
-
-Random Forest
-
-Support Vector Machine (SVM)
-
-XGBoost
-
-Each model was hyperparameter-tuned for improved performance.
-
-4. Model Evaluation
-
-Metrics used:
+**4.Model Evaluation:**
+Metrics Used:
 
 Accuracy
-
 Precision
-
 Recall
-
 F1-Score
-
 ROC-AUC
 
 Confusion Matrix
-
 10-Fold Stratified Cross-Validation
 
-🔥 Best Performing Model
+**🔥Best Performing Model:**
 Model	Accuracy
 Random Forest	95%
 XGBoost	92%
-Others	Lower performance
+Others	Lower
 
-Random Forest performed best due to its ability to handle nonlinear relationships and high-dimensional data.
-
-🧰 Tech Stack
-Languages & Tools
+**🧰 Tech Stack:**
 
 Python
-
 Pandas
-
 NumPy
-
 Matplotlib / Seaborn / Plotly
-
 Scikit-learn
-
 XGBoost
-
 Imbalanced-learn (SMOTE)
-
 Jupyter Notebook / VS Code
-
-
-🧪 How to Run the Project
-1. Clone the Repository
-git clone https://github.com/your-username/water-quality-ml.git
-cd water-quality-ml
-
-2. Install Dependencies
-pip install -r requirements.txt
-
-3. Run the Notebook
-
-Open Jupyter Notebook and run:
-
-WaterQualityPrediction.ipynb
-
-
-Or run script version:
-
-python main.py
